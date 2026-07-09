@@ -1,0 +1,370 @@
+/* ========== RESET ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* ========== HEADER ========== */
+header {
+    background: #1A1A2E;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 70px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: #E94560;
+}
+
+/* ========== MENU BURGER (caché par défaut) ========== */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.burger-icon,
+.burger-icon::before,
+.burger-icon::after {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: white;
+    transition: 0.3s;
+}
+
+.burger-icon {
+    position: relative;
+}
+
+.burger-icon::before,
+.burger-icon::after {
+    content: '';
+    position: absolute;
+    left: 0;
+}
+
+.burger-icon::before {
+    top: -8px;
+}
+
+.burger-icon::after {
+    top: 8px;
+}
+
+/* ========== HERO ========== */
+#hero {
+    background: #1A1A2E;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    background: #E94560;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#hero h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+#hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: #E94560;
+    color: white;
+    padding: 14px 40px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background: #c0392b;
+}
+
+/* ========== SECTIONS ========== */
+section {
+    padding: 80px 20px;
+}
+
+section:nth-child(even) {
+    background: #F5F5F5;
+}
+
+h2 {
+    text-align: center;
+    font-size: 36px;
+    color: #1A1A2E;
+    margin-bottom: 50px;
+}
+
+/* ========== ABOUT ========== */
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+}
+
+.about-img {
+    width: 250px;
+    height: 250px;
+    background: #ddd;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+/* ========== SKILLS ========== */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.skill-card {
+    background: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.skill-card h3 {
+    color: #1A1A2E;
+    margin-bottom: 5px;
+}
+
+/* ========== PROJECTS ========== */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.project-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.project-card h3 {
+    padding: 20px 20px 10px;
+    color: #1A1A2E;
+}
+
+.project-card p {
+    padding: 0 20px 15px;
+    font-size: 14px;
+}
+
+.tag {
+    display: inline-block;
+    background: #fce4e4;
+    color: #E94560;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin: 0 0 15px 20px;
+}
+
+/* ========== CONTACT ========== */
+form {
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #0F3460;
+}
+
+.error {
+    color: #E74C3C;
+    font-size: 13px;
+    display: block;
+    margin-bottom: 15px;
+    min-height: 18px;
+}
+
+#formFeedback {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+    min-height: 24px;
+}
+
+/* ========== FOOTER ========== */
+footer {
+    background: #1A1A2E;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    font-size: 14px;
+}
+
+/* ========== RESPONSIVE TABLETTE (768px) ========== */
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #hero h1 {
+        font-size: 36px;
+    }
+
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-img {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* ========== RESPONSIVE MOBILE (480px) ========== */
+@media (max-width: 480px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: #1A1A2E;
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+        list-style: none;
+        margin: 0;
+        z-index: 99;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #hero h1 {
+        font-size: 28px;
+    }
+
+    section {
+        padding: 50px 15px;
+    }
+}
