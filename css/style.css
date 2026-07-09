@@ -1,4 +1,4 @@
-
+/* ========== RESET ========== */
 * {
     margin: 0;
     padding: 0;
@@ -11,6 +11,7 @@ body {
     color: #333;
 }
 
+/* ========== HEADER ========== */
 header {
     background: #1A1A2E;
     color: white;
@@ -49,6 +50,45 @@ nav {
     color: #E94560;
 }
 
+/* ========== MENU BURGER (caché par défaut) ========== */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.burger-icon,
+.burger-icon::before,
+.burger-icon::after {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: white;
+    transition: 0.3s;
+}
+
+.burger-icon {
+    position: relative;
+}
+
+.burger-icon::before,
+.burger-icon::after {
+    content: '';
+    position: absolute;
+    left: 0;
+}
+
+.burger-icon::before {
+    top: -8px;
+}
+
+.burger-icon::after {
+    top: 8px;
+}
+
+/* ========== HERO ========== */
 #hero {
     background: #1A1A2E;
     color: white;
@@ -96,6 +136,7 @@ nav {
     background: #c0392b;
 }
 
+/* ========== SECTIONS ========== */
 section {
     padding: 80px 20px;
 }
@@ -111,12 +152,36 @@ h2 {
     margin-bottom: 50px;
 }
 
-#about p {
-    max-width: 700px;
-    margin: 0 auto 15px;
-    font-size: 16px;
+/* ========== ABOUT ========== */
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
+.about-text {
+    flex: 1;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+}
+
+.about-img {
+    width: 250px;
+    height: 250px;
+    background: #ddd;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+/* ========== SKILLS ========== */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -139,6 +204,7 @@ h2 {
     margin-bottom: 5px;
 }
 
+/* ========== PROJECTS ========== */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -160,6 +226,7 @@ h2 {
     object-fit: cover;
     display: block;
 }
+
 .project-card h3 {
     padding: 20px 20px 10px;
     color: #1A1A2E;
@@ -180,7 +247,7 @@ h2 {
     margin: 0 0 15px 20px;
 }
 
-
+/* ========== CONTACT ========== */
 form {
     max-width: 550px;
     margin: 0 auto;
@@ -226,7 +293,7 @@ input:focus, textarea:focus {
     min-height: 24px;
 }
 
-
+/* ========== FOOTER ========== */
 footer {
     background: #1A1A2E;
     color: white;
@@ -235,6 +302,7 @@ footer {
     font-size: 14px;
 }
 
+/* ========== RESPONSIVE TABLETTE (768px) ========== */
 @media (max-width: 768px) {
     .skills-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -247,29 +315,49 @@ footer {
     #hero h1 {
         font-size: 36px;
     }
+
     .about-content {
-    flex-direction: column;
-    text-align: center;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-img {
+        width: 200px;
+        height: 200px;
+    }
 }
 
-.about-img {
-    width: 200px;
-    height: 200px;
-}
-}
-
+/* ========== RESPONSIVE MOBILE (480px) ========== */
 @media (max-width: 480px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: #1A1A2E;
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+        list-style: none;
+        margin: 0;
+        z-index: 99;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
     .skills-grid {
         grid-template-columns: 1fr;
     }
 
     .projects-grid {
         grid-template-columns: 1fr;
-    }
-
-    .nav-links {
-        gap: 15px;
-        font-size: 14px;
     }
 
     #hero h1 {
@@ -279,34 +367,4 @@ footer {
     section {
         padding: 50px 15px;
     }
-
-}
-
-.about-content {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.about-text {
-    flex: 1;
-}
-
-.about-text p {
-    margin-bottom: 15px;
-}
-
-.about-img {
-    width: 250px;
-    height: 250px;
-    background: #ddd;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #999;
-    font-size: 18px;
-    flex-shrink: 0;
 }
